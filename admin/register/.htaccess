@@ -1,0 +1,4 @@
+AuthName "Access Restricted!"
+AuthType Basic
+AuthUserFile .htpassword
+Require valid-user

@@ -62,8 +62,10 @@ This responsive website was designed to reflect a virtual immersion in the envir
 * Create database tables according to the structure in database-structure.odt
   * You may want to preload your desired categories into the database at this time
 * Update includes/connection.php with database connection information then upload all documents to the server
-* Update reCaptcha keys on contact-us/index.php
-* Note category id's from the database and update website page files accordingly
+* Update reCaptcha keys and your email information on lines 19, 20 and 26 on contact-us/index.php
+* Update Google Analytics tracking code in includes/analyticstracking.php
+* Update new.php, new-page.php, _edit.php, and _edit-page.php in the admin directory with correct server path to your images and thumbnails directories
+* Note category id's  and page id's from the database and update website page files accordingly
 * Both sidebars live in includes/sidebar.php and currently must be edited manually
 * Currently, videos and their posters are uploaded manually to the videos and posters directories and then the required information is added to the database for the sql query
 * Posts and pages are created in the administration panel and require a category to display
@@ -71,4 +73,5 @@ This responsive website was designed to reflect a virtual immersion in the envir
 * Users are registered from the registration form within the admin/register directory which is protected via Apache's Basic Authentication. 
   * A valid htpassword file can be created at [htaccesstools](http://www.htaccesstools.com/htpasswd-generator/) and uploaded to the admin/register directory
   * The admin/register directory can be removed from the server after users are registered
+* Create auto download links by linking to the download file: href="/download?file=filename.pdf"
 

@@ -1,0 +1,12 @@
+RewriteEngine On
+    #RewriteRule ^([0-9]+)/([\S]+)/?$ detail.php?article_id=$1 [NC,L]
+	RewriteRule ^journal/entry/([a-z-0-9]+)/?$ /detail.php?article_id=$1 [NC,L]
+
+#Do not allow users to browse directories without index files
+Options -indexes
+
+#Capture 404s and send to new location
+ErrorDocument 401 /missing/index.php
+ErrorDocument 403 /missing/index.php
+ErrorDocument 404 /missing/index.php
+
