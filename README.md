@@ -37,13 +37,17 @@ This responsive website was designed to reflect a virtual immersion in the envir
 * Custom text editor creates posts and pages in markdown, interpreted using Michelf's Markdown PHP plugin, with a cheatsheet available on hover.
 * Editor also includes ability to add extra HTML for advanced content needs.
 
+*Scripts adapted from [PHP Solutions](http://www.apress.com/9781430232490) with my own modifications*
+
 ## REQUIRES
 
 * PHP 5.3 - for Michelf Markdown
+* Apache web server - to use htaccess files
 * [jQuery](http://jquery.com/) (installed via [CDNJS](https://cdnjs.com/libraries/jquery/))
 * [Modernizr](http://www.modernizr.com/) (installed via [CDNJS](http://cdnjs.com/libraries/modernizr))
 * [SlickNav](http://slicknav.com/) (installed via [CDNJS](http://cdnjs.com/libraries/SlickNav))
 * [Michelf Markdown](https://github.com/michelf/php-markdown) - installed into includes/Michelf
+* [reCAPTCHA](https://developers.google.com/recaptcha/docs/start) - installed into includes
 * Amaranth font (installed via [Google Fonts](https://www.google.com/fonts))
 
 ## FONTS USED BY ORIGINAL
@@ -52,3 +56,19 @@ This responsive website was designed to reflect a virtual immersion in the envir
 * Heading: [ArmWrestler](www.fontsquirrel.com/fonts/ArmWrestler)
 * Body: [Colaborate](www.fontsquirrel.com/fonts/colaborate)
 * Icons: [Web Symbols](www.fontsquirrel.com/fonts/web-symbols)
+
+## USAGE
+
+* Create database tables according to the structure in database-structure.odt
+  * You may want to preload your desired categories into the database at this time
+* Update includes/connection.php with database connection information then upload all documents to the server
+* Update reCaptcha keys on contact-us/index.php
+* Note category id's from the database and update website page files accordingly
+* Both sidebars live in includes/sidebar.php and currently must be edited manually
+* Currently, videos and their posters are uploaded manually to the videos and posters directories and then the required information is added to the database for the sql query
+* Posts and pages are created in the administration panel and require a category to display
+* Pages must be added to the navigation manually, in the includes/header.php
+* Users are registered from the registration form within the admin/register directory which is protected via Apache's Basic Authentication. 
+  * A valid htpassword file can be created at [htaccesstools](http://www.htaccesstools.com/htpasswd-generator/) and uploaded to the admin/register directory
+  * The admin/register directory can be removed from the server after users are registered
+
